@@ -1,0 +1,72 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.by import Keys
+import time
+
+
+class Sasi_project2_task1():
+
+    def search(self):
+        driver = webdriver.Firefox()
+        url1 = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+        driver.get(url1)
+        driver.maximize_window()
+        time.sleep(3)
+        username = driver.find_element(By.XPATH, "//input[@name='username']")
+        username.send_keys("Admin")
+        time.sleep(3)
+        password = driver.find_element(By.XPATH, "//input[@name='password']")
+        password.send_keys("admin123")
+        time.sleep(3)
+        driver.find_element(By.XPATH, "//button[@type='submit']").click()
+        time.sleep(3)
+        search_box = driver.find_element(By.XPATH, "//input[@placeholder='Search']")
+        search_box.send_keys("Admin")
+        driver.find_element(By.XPATH, "//span[text()='Admin']").click()
+        time.sleep(3)
+        search_box = driver.find_element(By.XPATH, "//input[@placeholder='Search']")
+        search_box.send_keys("PIM")
+        driver.find_element(By.XPATH, "//span[text()='PIM']").click()
+        time.sleep(3)
+        search_box = driver.find_element(By.XPATH, "//input[@placeholder='Search']")
+        search_box.send_keys("Leave")
+        driver.find_element(By.XPATH, "//span[text()='Leave']").click()
+        time.sleep(3)
+        search_box = driver.find_element(By.XPATH, "//input[@placeholder='Search']")
+        search_box.send_keys("Time")
+        driver.find_element(By.XPATH, "//span[text()='Time']").click()
+        time.sleep(3)
+        search_box = driver.find_element(By.XPATH, "//input[@placeholder='Search']")
+        search_box.send_keys("Recruitment")
+        driver.find_element(By.XPATH, "//span[text()='Recruitment']").click()
+        time.sleep(3)
+        search_box = driver.find_element(By.XPATH, "//input[@placeholder='Search']")
+        search_box.send_keys("My Info")
+        driver.find_element(By.XPATH, "//span[text()='My Info']").click()
+        time.sleep(3)
+        search_box = driver.find_element(By.XPATH, "//input[@placeholder='Search']")
+        search_box.send_keys("Performance")
+        driver.find_element(By.XPATH, "//span[text()='Performance']").click()
+        time.sleep(3)
+        search_box = driver.find_element(By.XPATH, "//input[@placeholder='Search']")
+        search_box.send_keys("Dashboard")
+        driver.find_element(By.XPATH, "//span[text()='Dashboard']").click()
+        time.sleep(3)
+        search_box = driver.find_element(By.XPATH, "//input[@placeholder='Search']")
+        search_box.send_keys("Directory")
+        driver.find_element(By.XPATH, "//span[text()='Directory']").click()
+        time.sleep(3)
+        search_box = driver.find_element(By.XPATH, "//input[@placeholder='Search']")
+        search_box.send_keys("Buzz")
+        driver.find_element(By.XPATH, "//span[text()='Buzz']").click()
+        time.sleep(3)
+        search_box = driver.find_element(By.XPATH, "//input[@placeholder='Search']")
+        search_box.send_keys("Maintenance")
+        driver.find_element(By.XPATH, "//span[text()='Maintenance']").click()
+        time.sleep(3)
+
+        driver.close()
+
+
+srch = Sasi_project2_task1()
+srch.search()
