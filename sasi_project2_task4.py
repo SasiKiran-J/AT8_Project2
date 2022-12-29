@@ -23,7 +23,7 @@ class Sasi_project2_task4():
         time.sleep(3)
         driver.find_element(By.XPATH, "//span[text()='PIM']").click()
         time.sleep(3)
-        driver.find_element(By.XPATH, "//div[contains(text(),'Sasi Kiran')").click()
+        driver.find_element(By.XPATH, "//div[contains(text(),'Sasi Kiran')]").click()
         time.sleep(3)
 
 
