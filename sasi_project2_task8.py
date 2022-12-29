@@ -39,7 +39,7 @@ class Sasi_project2_task8():
         ActionChains(driver).move_to_element(select).click().perform()
         time.sleep(6)
         dob = driver.find_element(By.XPATH, "(//input[@placeholder='yyyy-mm-dd'])[1]")
-        dob.send_keys("03-10-2019")
+        dob.send_keys("2019-12-03")
         time.sleep(3)
         save = driver.find_element(By.XPATH, "//button[@type='submit']")
         save.click()
