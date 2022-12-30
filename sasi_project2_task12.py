@@ -1,0 +1,76 @@
+from selenium import webdriver
+from selenium.webdriver import ActionChains, Keys
+from selenium.webdriver.common.by import By
+import time
+
+
+class Sasi_project2_task12():
+
+    def salary(self):
+
+        driver = webdriver.Firefox()
+        url1 = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+        driver.get(url1)
+        driver.maximize_window()
+        time.sleep(3)
+        username = driver.find_element(By.XPATH, "//input[@name='username']")
+        username.send_keys("Admin")
+        time.sleep(3)
+        password = driver.find_element(By.XPATH, "//input[@name='password']")
+        password.send_keys("admin123")
+        time.sleep(3)
+        driver.find_element(By.XPATH, "//button[@type='submit']").click()
+        time.sleep(3)
+        driver.find_element(By.XPATH, "//span[text()='PIM']").click()
+        time.sleep(3)
+        driver.find_element(By.XPATH, "//div[contains(text(),'Sasi Kiran')]").click()
+        time.sleep(3)
+        driver.find_element(By.XPATH, "//a[text()='Salary']").click()
+        time.sleep(3)
+        driver.find_element(By.XPATH, "(//button[@class='oxd-button oxd-button--medium oxd-button--text'])[1]").click()
+        time.sleep(3)
+        salary_components = driver.find_element(By.XPATH, "//label[text()='Salary Components']/following::div[1]/input")
+        salary_components.send_keys("Nil")
+        time.sleep(3)
+        action = ActionChains(driver)
+        pay_grade = driver.find_element(By.XPATH, "//label[text()='Pay Grade']/following::div[1]")
+        ActionChains(driver).move_to_element(pay_grade).click().perform()
+        count1 = driver.find_element(By.XPATH, "//div[@role='option']/span[text()='Grade 1']")
+        ActionChains(driver).move_to_element(count1).click().perform()
+        time.sleep(6)
+        pay_frequency = driver.find_element(By.XPATH, "//label[text()='Pay Frequency']/following::div[1]")
+        ActionChains(driver).move_to_element(pay_frequency).click().perform()
+        count2 = driver.find_element(By.XPATH, "//div[@role='option']/span[text()='Monthly']")
+        ActionChains(driver).move_to_element(count2).click().perform()
+        time.sleep(6)
+        currency = driver.find_element(By.XPATH, "//label[text()='Currency']/following::div[1]")
+        ActionChains(driver).move_to_element(currency).click().perform()
+        count3 = driver.find_element(By.XPATH, "//div[@role='option']/span[text()='United States Dollars']")
+        ActionChains(driver).move_to_element(count3).click().perform()
+        time.sleep(6)
+        amount = driver.find_element(By.XPATH, "(//label[text()='Amount'])[1]/following::div[1]/input")
+        amount.send_keys("4000")
+        time.sleep(3)
+        driver.find_element(By.XPATH,
+                            "//span[@class='oxd-switch-input oxd-switch-input--active --label-right']").click()
+        time.sleep(3)
+        account_number = driver.find_element(By.XPATH, "//label[text()='Account Number']/following::div[1]/input")
+        account_number.send_keys("125468RF6500")
+        time.sleep(3)
+        account_type = driver.find_element(By.XPATH, "//label[text()='Account Type']/following::div[1]")
+        ActionChains(driver).move_to_element(account_type).click().perform()
+        count4 = driver.find_element(By.XPATH, "//div[@role='option']/span[text()='Savings']")
+        ActionChains(driver).move_to_element(count4).click().perform()
+        time.sleep(6)
+        routing_number = driver.find_element(By.XPATH, "//label[text()='Routing Number']/following::div[1]/input")
+        routing_number.send_keys("125478963")
+        time.sleep(3)
+        amount2 = driver.find_element(By.XPATH, "(//label[text()='Amount'])[2]/following::div[1]/input")
+        amount2.send_keys("4000")
+        time.sleep(3)
+        driver.find_element(By.XPATH, "//button[@type='submit']").click()
+        time.sleep(3)
+
+
+sal = Sasi_project2_task12()
+sal.salary()
